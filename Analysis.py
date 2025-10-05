@@ -26,6 +26,12 @@ def run_analysis():
     **Interpretation:**  
     The dataset reflects **true astrophysical dependencies** but also contains **collinear features**.
     """)
+    
+    st.image("Images/planet vs radius.png", width=700)
+    
+    st.image("Images/distribution.png", width=700)
+    st.markdown("""
+    The distribution plots illustrate the Disposition Count in the dataset.""")
 
     st.subheader("3️⃣ Feature Distribution Patterns")
     st.markdown("""
@@ -36,7 +42,7 @@ def run_analysis():
     **Modeling Insight:**  
     Requires **scaling or log transformation** to handle uneven feature ranges.
     """)
-
+  
     st.subheader("4️⃣ Key Predictors")
     st.markdown("""
     - **`koi_score`** → strongest predictor; separates *Candidate* vs. *False Positive*.  
@@ -65,6 +71,7 @@ def run_analysis():
     5. Correlations align with **astrophysical laws** → validates dataset authenticity.  
     6. Non-linear models are most effective for classification.  
     """)
+
 
     # --- Final Interpretation ---
     st.markdown("""

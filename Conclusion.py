@@ -4,7 +4,21 @@ st.set_page_config(page_title="Conclusion", layout="wide")
 st.title("✅ Conclusion & Insights")
 
 def show_conclusion():
-    # Fix typo in the image file extension
+    st.markdown("### Top 10 Important Features""")
+    st.image("Images/important feature.png", width=800)
+    st.markdown("""
+This bar chart shows the feature importance scores calculated by the Random Forest model. The importance reflects how much each feature contributes to the model’s predictive power.
+
+- The most influential feature is `koi_pdisposition_FALSE POSITIVE`, indicating that prior disposition labels strongly affect predictions.
+- `koi_score` and `koi_model_snr` are also highly important, meaning that the statistical score and signal-to-noise ratio play a major role in classification.
+- Other significant features include `koi_fpflag_ss`, `koi_time0bk_err2`, `koi_fpflag_co`, and `koi_prad`, which relate to planetary parameters, error estimates, and false-positive flags.
+- The importance gradually decreases for features like duration errors, depth, period errors, and stellar effective temperature errors.
+
+**Interpretation:**
+The Random Forest model relies heavily on both previous disposition flags and quantitative astrophysical measurements (like score, radius, depth, and duration errors). This confirms that a mix of domain-specific physical parameters and metadata strongly drives prediction accuracy.
+""")
+    
+        # Fix typo in the image file extension
     st.image("Images/confusion matrix.png", width=600)
 
     st.markdown("""
@@ -27,19 +41,13 @@ This confusion matrix shows the performance of the Random Forest model in classi
 **Interpretation:**
 The model performs very well, especially for the FALSE POSITIVE class, where almost all predictions are correct. Misclassifications are mostly between CANDIDATE and CONFIRMED, suggesting that these two classes are harder to distinguish compared to FALSE POSITIVE.
 
+**Accuracy:**
+Accuracy measures the overall correctness of the model and is calculated as the number of correct predictions divided by the total number of predictions. 
+We here got the Accuracy≈90.96%
+
+This high accuracy indicates that the model performs very well overall, though there is some confusion between the CANDIDATE and CONFIRMED classes.
+
 ---
-
-### 2. Top 15 Important Features – Random Forest
-
-This bar chart shows the feature importance scores calculated by the Random Forest model. The importance reflects how much each feature contributes to the model’s predictive power.
-
-- The most influential feature is `koi_pdisposition_FALSE POSITIVE`, indicating that prior disposition labels strongly affect predictions.
-- `koi_score` and `koi_model_snr` are also highly important, meaning that the statistical score and signal-to-noise ratio play a major role in classification.
-- Other significant features include `koi_fpflag_ss`, `koi_time0bk_err2`, `koi_fpflag_co`, and `koi_prad`, which relate to planetary parameters, error estimates, and false-positive flags.
-- The importance gradually decreases for features like duration errors, depth, period errors, and stellar effective temperature errors.
-
-**Interpretation:**
-The Random Forest model relies heavily on both previous disposition flags and quantitative astrophysical measurements (like score, radius, depth, and duration errors). This confirms that a mix of domain-specific physical parameters and metadata strongly drives prediction accuracy.
 """)
 
     st.markdown("""
@@ -49,7 +57,7 @@ The Random Forest model relies heavily on both previous disposition flags and qu
 - Automated classification can save **astronomers significant manual effort**.
 
 ### 🚀 Future Work
-- Integrate **TESS and K2 datasets** to expand model coverage.
+- Integrate **more datasets** to expand model coverage.
 - Enable **real-time retraining** with user-uploaded datasets.
 - Develop a **fully interactive dashboard** with filtering, visualization, and model explanations.
 
