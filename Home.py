@@ -98,17 +98,17 @@ if page == "Home":
 
 # ---------- PREDICT PAGE ----------
 elif page == "Predict":
-    st.title("🔮 Predict Exoplanets")
-    st.write("This page will allow users to upload new data or input manually for prediction.")
+    import Predict
+    Predict.run_predict()
 
 
 # ---------- ANALYSIS PAGE ----------
 elif page == "Analysis":
-    st.title("📊 Analysis & Model Performance")
-    st.write("This page will show dataset insights, visualizations, and model metrics.")
+    import Analysis
+    Analysis.run_analysis()
 
 
 # ---------- CONCLUSION PAGE ----------
 elif page == "Conclusion":
-    st.title("✅ Conclusion & Insights")
-    st.write("This page will summarize findings, key takeaways, and future work.")
+    import Conclusion
+    Conclusion.show_conclusion()
