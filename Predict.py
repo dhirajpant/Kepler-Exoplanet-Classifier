@@ -23,7 +23,7 @@ def run_predict():
     st.title("🔮 Exoplanet Prediction App")
     st.write("Provide exoplanet parameters to predict whether it is **Confirmed**, **Candidate**, or **False Positive**.")
 
-    st.markdown("""We have used top 10 features based on feature importance from Random Forest model for prediction.""")
+    st.markdown("""We have used top 10 features based on feature importance from Random Forest model for the prediction.""")
 
     # -------------------------------
     # User Input Section (Main Page)
